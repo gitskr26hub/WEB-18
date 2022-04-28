@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="navbar.html">
+</head>
+<body><div id="navbar">
+    <div><a href="C:\Users\VIKRANT9\Downloads\MASAI INVESTORS LOCAL STORAGE\backend.html">Backend</a></div>
+    <div><a href="C:\Users\VIKRANT9\Downloads\MASAI INVESTORS LOCAL STORAGE\frontend.html">Frontend</a></div>
+</div>
+   
+    <form action="" id="investorform">
+        <input type="text" placeholder="Enter Image URL" id="imgURL">
+        <input type="text" placeholder="Enter Investor Name" id="name">
+        <input type="text" placeholder="Enter Investor role" id="role">
+        <input type="text" name="" id="companyLogo" placeholder="Enter company logo URl">
+        <input type="submit" name="" id="">
+    </form>
+    
+</body>
+</html>
+<script>
+    document.querySelector("#investorform").addEventListener("submit",investorform)
+
+    var Investorarr=[] || JSON.parse(localStorage.getItem("InvestorData"))
+
+    function investorform(){
+
+        event.preventDefault()
+
+    var Investorobj={
+    investorImg: document.querySelector("#imgURL").value,
+    investorName : document.querySelector("#name").value,
+    investorRole:document.querySelector("#role").value,
+    investorCompanyLogo: document.querySelector("#companyLogo").value
+
+    }
+    
+    console.log(Investorobj);
+    Investorarr.push(Investorobj)
+    console.log(Investorarr);
+    localStorage.setItem("InvestorData",JSON.stringify(Investorarr))
+        }
+    
+</script>

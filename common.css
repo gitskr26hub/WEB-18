@@ -1,0 +1,5 @@
+#navbar{display: flex;height: 40px;width: 100%;background-color: rgb(8, 61, 61);color: white;margin-bottom: 40px;}
+#navbar>div:nth-child(1)>a{width: 100%;font-size: 35px;text-align: center;color: white;text-decoration: none;}
+#navbar>div:nth-child(1){width: 50%;font-size: 35px;text-align: center;}
+#navbar>div:nth-child(2)>a{width: 100%;font-size: 35px;text-align: center;color: white;text-decoration: none;}
+#navbar>div:nth-child(2){width: 50%;font-size: 35px;text-align: center;}
