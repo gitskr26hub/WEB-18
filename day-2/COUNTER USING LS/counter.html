@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #co{ height:40px;width: 40px;}
+        #inc{background-color: rgb(114, 219, 53);margin-bottom: 10px;}
+        #dec{background-color: red;}
+    </style>
+</head>
+<body>
+
+    <div id="co">
+        <h1>count</h1>
+        <button id="inc">INCREASE</button>
+        <button id="dec">DECREASE</button>
+    </div>
+    
+</body>
+</html>
+<script>
+
+
+var counter=0 || JSON.parse(localStorage.getItem("set"));
+
+document.querySelector("#inc").addEventListener("click",function(){
+var kk=document.querySelector("h1")
+kk.innerText=counter;
+counter++;
+
+localStorage.setItem("set",JSON.stringify(counter))
+
+// window.location.reload();
+
+})
+
+
+document.querySelector("#dec").addEventListener("click",function(){
+    var kk=document.querySelector("h1")
+kk.innerText=counter;
+counter--;
+
+localStorage.setItem("set",JSON.stringify(counter))
+
+// window.location.reload();
+})
+
+</script>
