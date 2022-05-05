@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <style>
+
+        h1{text-align: center;
+
+        }
+#box{width: 20%;margin: auto;
+
+}
+input{margin-top: 10px;overflow: hidden;font-size: large
+    ;height: 70px
+}
+p{text-align: center;
+
+}
+#submit{width: 70%;background-color: aqua; color: rgb(243, 255, 240);font-size: large;font-weight: bolder;}
+
+
+    </style>
+
+    
+
+</head>
+<body>
+
+<div id="box">
+    <h1>Signup page</h1>
+    <form action="">
+        <input type="text" name="" id="name" placeholder="FULL NAME">
+        <input type="text" placeholder="Email" id="email">
+        <input type="number" placeholder="Phone no" id="phone">
+        <input type="text" placeholder="password" id="password"><br>
+        <input type="submit" id="submit">
+    </form>
+
+</div>
+<p>If you have already account <a href="login.html">log in</a>
+</p>
+    
+</body>
+</html>
+
+<script>
+
+    var form=document.querySelector("form")
+
+   // var dataARR=[] || JSON.parse(localStorage.getItem("persondata"))
+
+    form.addEventListener("submit",function(event){
+        event.preventDefault()
+
+        var dataobj={
+            name:document.getElementById("name").value,
+            email:document.getElementById("email").value,
+            phoneNo:document.getElementById("phone").value,
+            password:document.getElementById("password").value,
+        }
+
+        console.log(dataobj)
+        // dataARR.push(dataobj)
+
+
+localStorage.setItem("persondata",JSON.stringify(dataobj))
+
+alert("you are successfully signed up,GO for login")
+window.location.href='login.html'
+    })
+
+    
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+  h1{text-align: center;
+
+}
+#box{width: 20%;margin: auto;
+
+}
+input{margin-top: 10px;overflow: hidden;font-size: large
+;height: 70px
+}
+p{text-align: center;
+
+}
+#submit{width: 70%;background-color: aqua; color: rgb(243, 255, 240);font-size: large;font-weight: bolder;}
+
+
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h1>LOG In page</h1>
+        <form action="">
+          
+            <input type="text" placeholder="Email" id="email" >
+            
+            <input type="text" placeholder="password " id="password"><br>
+            <input type="submit" id="submit">
+        </form>
+    
+    </div>
+    <p>Don't have an account?
+        Sign Up <a href="Signup.html">Sign Up</a>
+    </p>
+
+    
+</body>
+</html>
+<script>
+
+    var getDATA=JSON.parse(localStorage.getItem("persondata"))
+
+
+
+
+
+var form=document.querySelector("form")
+
+form.addEventListener("submit",function(){
+    event.preventDefault()
+
+    var data={
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+    }
+
+
+
+
+    if(getDATA===null){
+        alert("Please create an account")
+    }
+    else if(getDATA.email==data.email &&
+    getDATA.password==data.password)
+    {alert("Login successful")}
+
+
+
+
+})
+
+
+</script>
